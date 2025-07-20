@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>AJAX Hello</title></head>
+<body>
+  <h1>Click to get Hello</h1>
+  <button onclick="getHello()">Get Hello</button>
+  <p id="response"></p>
+
+  <script>
+    function getHello() {
+      // Sends an AJAX request (asynchronously) to the server at route /getHello.
+      fetch('/getHello')
+        .then(res => res.text())
+        .then(data => document.getElementById('response').innerText = data);
+    }
+  </script>
+</body>
+</html>
